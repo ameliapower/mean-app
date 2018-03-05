@@ -1,0 +1,10 @@
+<a (click)="goBack()">Back to Posts</a>
+<br/>
+
+<div *ngIf="article">
+	<h3>{{article.title}}</h3> 
+	<p>{{article.content}}</p>
+
+	<a routerLink ="/edit/{{ article._id }}">Edit Post</a> <br/>
+	<a (click)="deletePost(article._id)">Delete Post</a> 
+</div>

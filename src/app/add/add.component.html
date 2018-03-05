@@ -1,0 +1,21 @@
+<a (click)="goBack()">Back to Posts</a>
+<br/>
+<form [formGroup]="postForm" (ngSubmit)="addPost(article,postForm.value)" *ngIf="postForm">
+  <label>Title
+    <input type="text" [formControl]="postForm.controls['title']" 
+    formControlName="title" placeholder="Title" required />
+  </label>
+  <div class="alert" *ngIf="!postForm.controls['title'].valid && postForm.controls['title'].touched">
+  	This field is required and must be at least 10 characters
+  </div>
+   <label>Content
+    <textarea [formControl]="postForm.controls['content']" 
+    formControlName="content" placeholder="Content" required ></textarea>
+  </label>
+  <div class="alert" *ngIf="!postForm.controls['content'].valid && postForm.controls['content'].touched">
+  	This field is required and must be at least 10 characters
+  </div>
+  <button type="submit" [disabled]="!postForm.valid">Submit</button>
+  <p>Value: {{ postForm.value | json }}</p>
+<p>Validation status: {{ postForm.status }}</p>
+</form>
