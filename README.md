@@ -1,9 +1,8 @@
 # Mongo Db, Express server, Angular, Node App 
 
 
-Initialized with angular-cli
-Added express server
-Added mongoDb
+- Initialized with angular-cli
+- Added express server and mongoDb
 
 
 ## Install packages
